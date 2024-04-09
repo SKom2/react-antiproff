@@ -18,9 +18,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"],
+      "@pages/*": ["pages/*"],
+      "@components/*": ["components/*"],
+      "@services/*": ["services/*"],
+    },
   },
   "include": [
-    "src"
-  ]
+    "craco.config.js",
+    "src",
+    ".eslintrc.cjs",
+    "tailwind.config.js"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
