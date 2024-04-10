@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        gray: '#808185',
         lightGray: '#F8F8F8',
         error: '#FF6161',
         violet: '#512689',
@@ -11,6 +12,9 @@ module.exports = {
       },
       fontFamily: {
         Roboto: ['Roboto', 'sans-serif'],
+      },
+      boxShadow: {
+        custom: '0 4px 20px 0 rgba(0, 0, 0, 0.08)',
       },
       fontSize: {
         h1: [
