@@ -1,27 +1,43 @@
 import React, { FC, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthBlockProps } from '@components/AuthBlock/AuthBlock';
+import { useAppDispatch, useAppSelector } from '@hooks/redux';
+import { loginUser, registerUser } from '@store/slices/auth/auth';
 import Input from '@/ui/Input/Input';
 import Button from '@/ui/Button/Button';
 
 const AuthForm: FC<AuthBlockProps> = ({ type }) => {
-  const [name, setName] = useState('');
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const error = useAppSelector((state) => state.authReducer.error);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [passwordConfirmation, setPasswordConfirmation] = useState('');
+
+  const submitRegistrationForm = (e: any) => {
+    e.preventDefault();
+    dispatch(registerUser({ email, password })).then((resultAction) => {
+      if (registerUser.fulfilled.match(resultAction)) {
+        navigate('/');
+      }
+    });
+  };
+
+  const submitLoginForm = (e: any) => {
+    e.preventDefault();
+    dispatch(loginUser({ email, password })).then((resultAction) => {
+      if (loginUser.fulfilled.match(resultAction)) {
+        navigate('/');
+      }
+    });
+  };
 
   return (
-    <form>
+    <form
+      onSubmit={type === 'register' ? submitRegistrationForm : submitLoginForm}
+    >
       <div className="flex flex-col gap-4">
-        {type === 'register' && (
-          <Input
-            type="text"
-            htmlFor="name"
-            name="Имя"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Артур"
-          />
-        )}
         <Input
           type="email"
           htmlFor="email"
@@ -29,6 +45,7 @@ const AuthForm: FC<AuthBlockProps> = ({ type }) => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="example@mail.ru"
+          error={error}
         />
         <Input
           type="password"
@@ -37,22 +54,14 @@ const AuthForm: FC<AuthBlockProps> = ({ type }) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="******"
+          error={error}
         />
-        {type === 'register' && (
-          <Input
-            type="password"
-            htmlFor="passwordConfirm"
-            name="Подтвердите пароль"
-            value={passwordConfirmation}
-            onChange={(e) => setPasswordConfirmation(e.target.value)}
-            placeholder="******"
-          />
-        )}
       </div>
       <Button
         type="submit"
+        disabled={!email}
         text={type === 'register' ? 'Зарегистрироваться' : 'Войти'}
-        customClasses="mt-6 text-white bg-violet h-12 transition-colors duration-500 hover:opacity-90"
+        customClasses={`mt-6 text-white h-12 transition-colors duration-500 ${!email ? 'bg-gray' : 'bg-violet hover:opacity-90'}`}
       />
     </form>
   );

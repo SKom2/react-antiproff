@@ -55,8 +55,9 @@ module.exports = {
         ],
         "@typescript-eslint/strict-boolean-expressions": 0,
         "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/no-explicit-any": 0,
         "react/no-children-prop": 0,
         "import/no-extraneous-dependencies": 0,
-        "import/extensions": 0
+        "import/extensions": 0,
     }
 }

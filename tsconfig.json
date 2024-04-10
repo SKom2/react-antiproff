@@ -23,9 +23,15 @@
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"],
-      "@pages/*": ["pages/*"],
+      "@api/*": ["api/*"],
+      "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
-      "@services/*": ["services/*"],
+      "@hooks/*": ["hooks/*"],
+      "@models/*": ["models/*"],
+      "@pages/*": ["pages/*"],
+      "@store/*": ["store/*"],
+      "@ui/*": ["ui/*"],
+      "@utils/*": ["utils/*"]
     },
   },
   "include": [
