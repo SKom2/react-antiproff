@@ -9,6 +9,10 @@ const authService = {
   async login(data: AuthFormData) {
     return axiosClassic.post<IAuthResponse>('/login', data);
   },
+
+  async logout() {
+    return axiosClassic.post('/logout');
+  },
 };
 
 export default authService;

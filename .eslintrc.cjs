@@ -59,5 +59,6 @@ module.exports = {
         "react/no-children-prop": 0,
         "import/no-extraneous-dependencies": 0,
         "import/extensions": 0,
+        "react/jsx-no-useless-fragment": 0,
     }
 }

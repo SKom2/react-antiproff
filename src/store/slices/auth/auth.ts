@@ -1,6 +1,9 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AuthFormData, IAuthResponse } from '@store/slices/auth/auth.types';
-import { saveAccessToken } from '@store/slices/auth/auth.helpers';
+import {
+  removeAccessToken,
+  saveAccessToken,
+} from '@store/slices/auth/auth.helpers';
 import authService from '@store/slices/auth/auth.service';
 
 const initialState: IAuthResponse = {
@@ -40,8 +43,23 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+export const logoutUser = createAsyncThunk(
+  'auth/logout',
+  async (_, { fulfillWithValue, rejectWithValue }) => {
+    try {
+      const response = await authService.logout();
+
+      if (response) removeAccessToken();
+
+      return fulfillWithValue(response);
+    } catch (e) {
+      return rejectWithValue(e);
+    }
+  }
+);
+
 export const authSlice = createSlice({
-  name: 'register',
+  name: 'auth',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -78,12 +96,33 @@ export const authSlice = createSlice({
         return {
           ...state,
           isLoading: false,
-          id: action.payload.data.id,
           token: action.payload.data.token,
           error: '',
         };
       })
       .addCase(loginUser.rejected, (state, action: PayloadAction<any>) => {
+        return {
+          ...state,
+          isLoading: false,
+          error: action.payload.response.data.error,
+        };
+      })
+      .addCase(logoutUser.pending, (state) => {
+        return {
+          ...state,
+          isLoading: true,
+        };
+      })
+      .addCase(logoutUser.fulfilled, (state) => {
+        return {
+          ...state,
+          isLoading: false,
+          id: null,
+          token: '',
+          error: '',
+        };
+      })
+      .addCase(logoutUser.rejected, (state, action: PayloadAction<any>) => {
         return {
           ...state,
           isLoading: false,
