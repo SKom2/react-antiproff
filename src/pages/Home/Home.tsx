@@ -1,13 +1,14 @@
 import Header from '@components/Header/Header';
 import UserList from '@components/UserList/UserList';
+import Main from '@components/Main/Main';
 
 const Home = () => {
   return (
     <>
       <Header />
-      <main className="px-9 pt-12 pb-[69px]">
+      <Main>
         <UserList />
-      </main>
+      </Main>
     </>
   );
 };

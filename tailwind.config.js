@@ -3,6 +3,17 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      keyframes: {
+        anim: {
+          '0%, 100%': { transformOrigin: '50% -100%', transform: 'rotate(0deg)' },
+          '50%': { transformOrigin: '50% -100%', transform: 'rotate(360deg)' },
+          '50.1%': { transformOrigin: '50% 200%', transform: 'rotate(0deg)' },
+          '100%': { transformOrigin: '50% 200%', transform: 'rotate(360deg)' }
+        }
+      },
+      animation: {
+        anim: 'anim 3s infinite ease-in-out'
+      },
       colors: {
         gray: '#808185',
         lightGray: '#F8F8F8',

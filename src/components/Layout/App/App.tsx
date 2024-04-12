@@ -5,18 +5,15 @@ import Login from '@pages/Login/Login';
 import { Provider } from 'react-redux';
 import { store } from '@store/store';
 import ProtectedRoute from '@components/ProtectedRoute/ProtectedRoute';
-import { getAccessToken } from '@store/slices/auth/auth.helpers';
 import UserProfile from '@pages/UserProfile/UserProfile';
 
 const App = () => {
-  const token = getAccessToken();
-
   return (
     <Routes>
       <Route
         path="/"
         element={
-          <ProtectedRoute token={token}>
+          <ProtectedRoute>
             <Home />
           </ProtectedRoute>
         }
@@ -24,7 +21,7 @@ const App = () => {
       <Route
         path="/users/:id"
         element={
-          <ProtectedRoute token={token}>
+          <ProtectedRoute>
             <UserProfile />
           </ProtectedRoute>
         }

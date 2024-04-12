@@ -67,7 +67,6 @@ export const userSlice = createSlice({
         };
       })
       .addCase(getUserThunk.fulfilled, (state, action) => {
-        console.log(action.payload);
         return {
           ...state,
           isLoading: false,

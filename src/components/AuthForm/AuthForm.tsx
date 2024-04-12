@@ -19,6 +19,7 @@ const AuthForm: FC<AuthBlockProps> = ({ type }) => {
     e.preventDefault();
     dispatch(registerUser({ email, password })).then((resultAction) => {
       if (registerUser.fulfilled.match(resultAction)) {
+        console.log('nunu');
         navigate('/');
       }
     });
@@ -29,6 +30,7 @@ const AuthForm: FC<AuthBlockProps> = ({ type }) => {
     dispatch(loginUser({ email, password })).then((resultAction) => {
       if (loginUser.fulfilled.match(resultAction)) {
         navigate('/');
+        console.log('nunu');
       }
     });
   };

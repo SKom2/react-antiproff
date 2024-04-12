@@ -1,20 +1,19 @@
 import { Navigate } from 'react-router-dom';
 import React, { FC, ReactElement } from 'react';
+import { getAccessToken } from '@store/slices/auth/auth.helpers';
 
 interface ProtectedRouteProps {
-  token: string | null;
   children: React.ReactNode;
 }
 
 const ProtectedRoute: FC<ProtectedRouteProps> = ({
-  token,
   children,
 }): ReactElement | null => {
+  const token = getAccessToken();
   if (!token) {
     return <Navigate to="/login" replace />;
   }
 
-  // eslint-disable-next-line react/jsx-no-useless-fragment
   return <>{children}</>;
 };
 
