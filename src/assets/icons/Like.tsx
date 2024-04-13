@@ -8,10 +8,10 @@ const Like: FC<LikeProps> = ({ fill }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill={fill ? '' : 'none'}
+      fill={fill ? '#512689' : 'none'}
       viewBox="0 0 24 24"
       strokeWidth={1.5}
-      stroke="#000"
+      stroke={fill ? '#512689' : '#000'}
       width="21.78"
       height="17.45"
     >

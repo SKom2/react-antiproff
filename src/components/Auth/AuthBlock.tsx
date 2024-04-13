@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import AuthForm from '@components/AuthForm/AuthForm';
+import AuthForm from '@components/Auth/AuthForm';
 import { Link } from 'react-router-dom';
 
 export interface AuthBlockProps {

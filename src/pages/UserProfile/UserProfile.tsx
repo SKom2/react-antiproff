@@ -2,9 +2,9 @@ import React, { useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@hooks/redux';
 import { getUserThunk } from '@store/slices/users/users';
-import Header from '@components/Header/Header';
-import UserInfo from '@components/UserInfo/UserInfo';
-import Main from '@components/Main/Main';
+import Header from '@components/Layout/Header/Header';
+import UserInfo from '@components/User/UserInfo';
+import Main from '@components/Layout/Main/Main';
 import Loader from '@components/Loader/Loader';
 
 const UserProfile = () => {

@@ -3,16 +3,12 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      keyframes: {
-        anim: {
-          '0%, 100%': { transformOrigin: '50% -100%', transform: 'rotate(0deg)' },
-          '50%': { transformOrigin: '50% -100%', transform: 'rotate(360deg)' },
-          '50.1%': { transformOrigin: '50% 200%', transform: 'rotate(0deg)' },
-          '100%': { transformOrigin: '50% 200%', transform: 'rotate(360deg)' }
-        }
+      gridTemplateColumns: {
+        'auto-fill-100': 'repeat(auto-fill, minmax(305px, 1fr))',
+        'auto-fit-100': 'repeat(auto-fit, minmax(305px, 1fr))',
       },
-      animation: {
-        anim: 'anim 3s infinite ease-in-out'
+      screens: {
+        425: '425px', // Название брейкпоинта может быть любым
       },
       colors: {
         gray: '#808185',
@@ -32,6 +28,12 @@ module.exports = {
           '64px',
           {
             lineHeight: '75px',
+          },
+        ],
+        h1s: [
+          '36px',
+          {
+            lineHeight: '42.19px',
           },
         ],
         t: [

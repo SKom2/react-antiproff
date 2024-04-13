@@ -10,10 +10,10 @@ const UserInfo = () => {
   }
 
   return (
-    <div className="grid grid-cols-[1fr_8fr]">
-      <div />
-      <div className="flex gap-[129px] max-w-[947px]">
-        <div className="flex flex-col gap-6 text-ts text-black max-w-[630px]">
+    <div className="grid grid-cols-[1fr_8fr] max-md:block">
+      <div className="max-md:hidden" />
+      <div className="flex gap-[129px] max-w-[947px] max-lg:gap-[60px] max-md:flex-col-reverse max-md:gap-8 ">
+        <div className="flex flex-col gap-6 text-ts text-black max-w-[630px] max-lg:gap-4 max-md:text-ts">
           <p>
             Клиенты видят в нем эксперта по вопросам разработки комплексных
             решений финансовых продуктов, включая такие аспекты, как
@@ -43,11 +43,11 @@ const UserInfo = () => {
         <div className="flex flex-col gap-6 text-ts">
           <div className="flex gap-2">
             <Phone />
-            <span>+7 (954) 333-44-55</span>
+            <span className="text-ts">+7 (954) 333-44-55</span>
           </div>
           <div className="flex gap-2">
             <Mail />
-            <span>{userData.email}</span>
+            <span className="text-ts">{userData.email}</span>
           </div>
         </div>
       </div>

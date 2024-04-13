@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthBlock from '@components/AuthBlock/AuthBlock';
+import AuthBlock from '@components/Auth/AuthBlock';
 
 const Register = () => {
   return (

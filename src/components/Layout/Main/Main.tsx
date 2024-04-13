@@ -5,7 +5,11 @@ interface MainProps {
 }
 
 const Main: FC<MainProps> = ({ children }) => {
-  return <main className="px-9 pt-12 pb-[69px]">{children}</main>;
+  return (
+    <main className="px-9 pt-12 pb-[69px] max-sm:py-8 max-sm:px-4">
+      {children}
+    </main>
+  );
 };
 
 export default Main;

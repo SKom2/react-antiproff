@@ -1,6 +1,6 @@
-import Header from '@components/Header/Header';
-import UserList from '@components/UserList/UserList';
-import Main from '@components/Main/Main';
+import Header from '@components/Layout/Header/Header';
+import UserList from '@components/User/UserList';
+import Main from '@components/Layout/Main/Main';
 
 const Home = () => {
   return (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useAppDispatch, useAppSelector } from '@hooks/redux';
 import { getUsersThunk } from '@store/slices/users/users';
-import UserCard from '@components/UserCard/UserCard';
+import UserCard from '@components/User/UserCard';
 import ArrowDown from '@assets/icons/ArrowDown';
 import { IUser } from '@models/IUser';
 import Loader from '@components/Loader/Loader';
@@ -42,7 +42,7 @@ const UserList = () => {
         <Loader />
       ) : (
         <div className="max-w-[1280px] m-auto">
-          <ul className="grid grid-cols-4 gap-[20px]">
+          <ul className="grid grid-cols-auto-fill-100 gap-5 max-425:flex max-425:flex-col max-425:items-center">
             {users.map((user) => (
               <li key={user.id}>
                 <UserCard {...user} />
@@ -52,7 +52,7 @@ const UserList = () => {
           {users.length % USERS_PER_PAGE === 0 && (
             <button
               type="button"
-              className="py-[9px] px-4 rounded-xl m-auto border-black border-[1px] text-t mt-14 flex gap-2"
+              className="text-ts py-[9px] px-4 rounded-xl m-auto border-black border-[1px] mt-14 flex gap-2 max-sm:mt-8"
               onClick={showMoreUsers}
             >
               Показать еще <ArrowDown />
