@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-antiproff/static/css/main.c718251e.css",
+    "main.js": "/react-antiproff/static/js/main.f82318db.js",
+    "index.html": "/react-antiproff/index.html",
+    "main.c718251e.css.map": "/react-antiproff/static/css/main.c718251e.css.map",
+    "main.f82318db.js.map": "/react-antiproff/static/js/main.f82318db.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c718251e.css",
+    "static/js/main.f82318db.js"
+  ]
+}
