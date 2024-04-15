@@ -1,4 +1,5 @@
 {
+  "homepage": "https://SKom2.github.io/react-antiproff",
   "name": "antipoff",
   "version": "0.1.0",
   "private": true,
@@ -30,6 +31,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
+    "deploy": "craco build && gh-pages -d build",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },

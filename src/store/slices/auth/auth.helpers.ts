@@ -1,24 +1,16 @@
-import Cookies from 'js-cookie';
-
 export enum Tokens {
   accessToken = 'token',
 }
 
 export const getAccessToken = () => {
-  const accessToken = Cookies.get(Tokens.accessToken);
-  console.log(accessToken);
+  const accessToken = localStorage.getItem(Tokens.accessToken);
   return accessToken || null;
 };
 
 export const saveAccessToken = (accessToken: string) => {
-  console.log('set');
-  Cookies.set(Tokens.accessToken, accessToken, {
-    domain: 'localhost',
-    sameSite: 'strict',
-    expires: 1,
-  });
+  localStorage.setItem(Tokens.accessToken, accessToken);
 };
 
 export const removeAccessToken = () => {
-  Cookies.remove(Tokens.accessToken);
+  localStorage.removeItem(Tokens.accessToken);
 };

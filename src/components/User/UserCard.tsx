@@ -33,7 +33,6 @@ const UserCard: FC<UserCardProps> = ({ first_name, last_name, avatar, id }) => {
   return (
     <article
       className="shadow-custom rounded-2xl pt-9 pb-[20px] px-[20px] min-w-[305px] cursor-pointer max-425:max-w-[305px]"
-      onKeyDown={handleCardClick}
       onClick={handleCardClick}
       role="presentation"
     >
