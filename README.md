@@ -15,6 +15,7 @@
 - **React**
 - **Redux**
 - **TypeScript**
+- **Tailwindcss**
 
 ## Project Setup
 
