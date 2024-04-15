@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-antiproff/static/css/main.c718251e.css",
-    "main.js": "/react-antiproff/static/js/main.4cd3c693.js",
+    "main.js": "/react-antiproff/static/js/main.0b3b106b.js",
     "index.html": "/react-antiproff/index.html",
     "main.c718251e.css.map": "/react-antiproff/static/css/main.c718251e.css.map",
-    "main.4cd3c693.js.map": "/react-antiproff/static/js/main.4cd3c693.js.map"
+    "main.0b3b106b.js.map": "/react-antiproff/static/js/main.0b3b106b.js.map"
   },
   "entrypoints": [
     "static/css/main.c718251e.css",
-    "static/js/main.4cd3c693.js"
+    "static/js/main.0b3b106b.js"
   ]
 }
